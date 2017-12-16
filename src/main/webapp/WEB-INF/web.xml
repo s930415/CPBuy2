@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  	<!-- struts2 seting begin-->
+	<filter>
+    	<filter-name>struts2</filter-name>
+    	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+<!--     	<filter-class>sso.struts2.StrutsFilter</filter-class> -->
+    	<init-param>
+			<param-name>config</param-name>
+			<param-value>struts-default.xml,struts-plugin.xml,config/struts/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>fengso-config</param-name>
+			<param-value>struts-default.xml,struts-plugin.xml,config/struts/struts-fengso-config.xml</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<!-- struts2 seting end -->
+</web-app>

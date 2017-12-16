@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "http://struts.apache.org/dtds/struts-2.1.7.dtd">    
+    <struts>
+		<constant name="struts.devMode" value="false"/>	
+		<constant name="struts.action.extension" value="action"/>
+		<constant name="struts.i18n.encoding" value="UTF-8"/>
+		<constant name="struts.enable.SlashesInActionNames" value="true"/>
+		<!--<constant name="struts.multipart.parser" value="jakart"/>-->
+		<constant name="struts2.sslplugin.httpsPort" value="443"/>
+		<constant name="struts2.sslplugin.httpPort" value="80"/>
+		<constant name="struts2.sslplugin.annotations" value="true"/>
+		<constant name="struts.multipart.maxSize" value="1000000000" />
+		
+		<include file="src/main/resources/struts/struts-front.xml" />
+    </struts>

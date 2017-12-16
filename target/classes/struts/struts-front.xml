@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "http://struts.apache.org/dtds/struts-2.1.7.dtd">    
+   <!-- 前端處理控制 -->
+<struts>
+	<package name="front" namespace="/" extends="ssl-default">
+		<global-results>
+			<result name="input">/WEB-INF/tkbgo/error.jsp</result>
+			<result name="invalid.token" type="redirect">index.jsp</result>
+		</global-results>
+		<action name="*" class="com.CPBuy.action.admin.IndexAction"	method="{1}">
+			<result name="toLogin">/WEB-INF/admin/login.jsp</result>
+		</action>
+	</package>
+</struts>
