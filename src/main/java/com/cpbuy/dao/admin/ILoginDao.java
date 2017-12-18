@@ -1,4 +1,4 @@
-package com.CPBuy.dao.admin;
+package com.cpbuy.dao.admin;
 
 public class ILoginDao {
 

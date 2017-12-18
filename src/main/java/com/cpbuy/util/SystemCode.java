@@ -1,7 +1,7 @@
-package com.CPBuy.util;
+package com.cpbuy.util;
 
 /**
- * ¨t²Î¥N½Xµü·J®w
+ * ï¿½tï¿½Î¥Nï¿½Xï¿½ï¿½ï¿½Jï¿½w
  * @author ClimaxK	
  * 2017-08-15
  */

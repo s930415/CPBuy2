@@ -1,4 +1,4 @@
-package com.CPBuy.modle;
+package com.cpbuy.modle;
 
 public class Member {
 	

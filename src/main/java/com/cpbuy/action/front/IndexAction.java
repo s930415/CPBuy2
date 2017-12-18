@@ -1,6 +1,6 @@
-package com.CPBuy.action.admin;
+package com.cpbuy.action.front;
 
-public class IndexAction extends AdminBaseAction{
+public class IndexAction extends FrontBaseAction{
 	
 	public String toIndex(){
 		return "toIndex";	

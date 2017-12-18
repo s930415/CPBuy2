@@ -1,4 +1,4 @@
-package com.CPBuy.action.admin;
+package com.cpbuy.action.front;
 
 public class RegisterAction {
 
