@@ -1,12 +1,17 @@
 package com.cpbuy.action.front;
 
-public class IndexAction extends FrontBaseAction{
-	
-	public String toIndex(){
-		return "toIndex";	
+import java.util.List;
+
+public class IndexAction extends FrontBaseAction {
+
+	private List product_list; // 最新商品列表
+
+	public String toIndex() {
+
+		return "toIndex";
 	}
-	
-	public String toLogin(){
+
+	public String toLogin() {
 		return "toLogin";
 	}
 }
