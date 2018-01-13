@@ -6,6 +6,12 @@
 <title>HELLO WORLD</title>
 </head>
 <body>
-<h2>HELLO WORLD!</h2>
+	<div class="middle">
+		<div class="left">
+			<s:list value="pc_list">
+			</s:list>
+		</div>
+		<div class="right"></div>
+	</div>
 </body>
 </html>
