@@ -4,7 +4,9 @@ import com.cpbuy.dao.IAdminDao;
 import com.cpbuy.modle.Admin;
 import com.cpbuy.service.IAdminService;
 
-public class AdminDaoImpl implements IAdminDao {
+import jdbc.dao.impl.PagingDaoImpl;
+
+public class AdminDaoImpl extends PagingDaoImpl implements IAdminDao {
 	
 	/**
 	 * 後台登入

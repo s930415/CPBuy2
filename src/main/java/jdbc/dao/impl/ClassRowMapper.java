@@ -1,4 +1,4 @@
-package sso.ojdbc.dao.impl;
+package jdbc.dao.impl;
 
 import java.lang.reflect.Method;
 import java.sql.ResultSet;
@@ -9,7 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.jdbc.core.RowMapper;
 
 /**
@@ -17,8 +18,7 @@ import org.springframework.jdbc.core.RowMapper;
  * 2013-03-08
  */
 public class ClassRowMapper implements RowMapper {
-
-	final Logger logger = Logger.getLogger(getClass());
+	final Logger logger = LogManager.getLogger(getClass());
 	static final String METHOD_PREFIX = "set";
 	List operations;
 	Class clazz;

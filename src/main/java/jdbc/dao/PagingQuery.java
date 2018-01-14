@@ -1,4 +1,4 @@
-package sso.ojdbc.dao;
+package jdbc.dao;
 
 import java.util.List;
 
