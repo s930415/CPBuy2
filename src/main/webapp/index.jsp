@@ -8,6 +8,7 @@
 <body>
 	<div class="middle">
 		<div class="left">
+		123
 			<s:list value="pc_list">
 			</s:list>
 		</div>
