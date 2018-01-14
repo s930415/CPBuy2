@@ -9,6 +9,6 @@ public interface IAdminService {
 	 * 
 	 * @return
 	 */
-	public Admin doLogin();
+	public Admin doLogin(Admin admin);
 
 }
