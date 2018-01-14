@@ -11,7 +11,9 @@ public class AdminServiceImpl implements IAdminService {
 	 * 
 	 * @return
 	 */
-	public Admin doLogin() {
+	public Admin doLogin(Admin admin) {
+		
+		
 		
 		return null;
 	}
