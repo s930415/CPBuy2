@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package jdbc.dao.impl;
 
 import java.lang.reflect.Method;
