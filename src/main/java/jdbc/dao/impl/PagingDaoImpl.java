@@ -1,4 +1,4 @@
-package sso.ojdbc.dao.impl;
+package jdbc.dao.impl;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import sso.ojdbc.dao.PagingDao;
-import sso.ojdbc.dao.PagingQuery;
+import jdbc.dao.PagingDao;
+import jdbc.dao.PagingQuery;
 
 /**
  * @author Ray
