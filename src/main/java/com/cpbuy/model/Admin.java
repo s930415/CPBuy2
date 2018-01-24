@@ -1,4 +1,4 @@
-package com.cpbuy.modle;
+package com.cpbuy.model;
 
 public class Admin {
 	private Integer id;

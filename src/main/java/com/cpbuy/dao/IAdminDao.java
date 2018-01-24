@@ -1,6 +1,6 @@
 package com.cpbuy.dao;
 
-import com.cpbuy.modle.Admin;
+import com.cpbuy.model.Admin;
 
 public interface IAdminDao {
 	

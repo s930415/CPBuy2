@@ -1,7 +1,7 @@
 package com.cpbuy.service.impl;
 
 import com.cpbuy.dao.IAdminDao;
-import com.cpbuy.modle.Admin;
+import com.cpbuy.model.Admin;
 import com.cpbuy.service.IAdminService;
 
 public class AdminServiceImpl implements IAdminService {

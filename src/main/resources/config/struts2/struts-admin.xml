@@ -2,11 +2,14 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <!-- 前端處理控制 -->
 <struts>
-	<package name="front" namespace="/front" extends="struts-default">
-		<action name="*" class="com.cpbuy.action.front.IndexAction"
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="*" class="com.cpbuy.action.admin.LoginAction"
 			method="{1}">
-			<result name="toIndex">/WEB-INF/front/index.jsp</result>
 			<result name="toLogin">/WEB-INF/admin/login.jsp</result>
+		</action>
+		<action name="register/*" class="com.cpbuy.action.admin.RegisterAction"
+			method="{1}">
+			<result name="toRegister">/WEB-INF/admin/register.jsp</result>
 		</action>
 	</package>
 </struts>

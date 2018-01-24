@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cpbuy.dao.IAdminDao;
-import com.cpbuy.modle.Admin;
+import com.cpbuy.model.Admin;
 
 import jdbc.dao.impl.PagingDaoImpl;
 
@@ -17,7 +17,7 @@ public class AdminDaoImpl extends PagingDaoImpl implements IAdminDao {
 	 */
 	public Admin doLogin(Admin admin){
 		
-		List args = new ArrayList<>();
+		List args = new ArrayList();
 		String sql = "SELECT * FROM ADMIN WHERE ACCOUNT = ? AND PASSWORD = ? ";
 		args.add(admin.getAccount());
 		args.add(admin.getPassword());

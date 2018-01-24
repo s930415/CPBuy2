@@ -2,7 +2,7 @@ package com.cpbuy.dao.impl;
 
 import java.util.List;
 
-import com.cpbuy.modle.Product;
+import com.cpbuy.model.Product;
 
 public class ProdouctDaoImpl {
 

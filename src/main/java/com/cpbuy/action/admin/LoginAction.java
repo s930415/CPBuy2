@@ -1,6 +1,6 @@
 package com.cpbuy.action.admin;
 
-import com.cpbuy.modle.Admin;
+import com.cpbuy.model.Admin;
 import com.cpbuy.service.IAdminService;
 
 /**
@@ -43,12 +43,17 @@ public class LoginAction extends AdminBaseAction {
 
 	public String doLogin() {
 		
-		Admin admin = new Admin();
-		admin.setAccount(account);
-		admin.setPassword(password);
-		adminService.doLogin(admin);
+		Admin l_admin = new Admin();
+		l_admin.setAccount(account);
+		l_admin.setPassword(password);
 		
-		return "doLogin";
+		admin = adminService.doLogin(l_admin);
+		
+		if(admin != null){
+			return "s_login";
+		}else{
+			return "f_login";
+		}
 	}
 
 }
