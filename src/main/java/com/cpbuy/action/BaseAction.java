@@ -11,5 +11,6 @@ public class BaseAction {
 	HttpServletRequest request = ServletActionContext.getRequest();
 	ServletContext respons =  ServletActionContext.getServletContext();
 	HttpSession session =  ServletActionContext.getRequest().getSession();
+	String MSG;
 
 }
