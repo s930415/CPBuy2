@@ -15,12 +15,13 @@
         http://www.springframework.org/schema/task
 		http://www.springframework.org/schema/task/spring-task-3.1.xsd
 		 ">
-	<bean id="adminLoginAction" class="com.cpbuy.action.admin.LoginAction" scope="prototype" lazy-init="true">
+		 
+	<bean id="adminLoginAction" class="com.cpbuy.action.admin.LoginAction" scope="prototype">
 		<property name="adminService">
 			<ref bean="adminService" />
 		</property>
 	</bean>
-	<bean id="adminCategoryAction" class="com.cpbuy.action.admin.CategoryAction" scope="prototype" lazy-init="true">
+	<bean id="adminCategoryAction" class="com.cpbuy.action.admin.CategoryAction" scope="prototype">
 		<property name="categoryActionService">
 			<ref bean="categoryActionService" />
 		</property>

@@ -9,7 +9,7 @@
 		<global-exception-mappings>
 			<exception-mapping result="error" exception=""></exception-mapping>
 		</global-exception-mappings>
-		<action name="*" class="com.cpbuy.action.admin.LoginAction" method="{1}">
+		<action name="*" class="adminLoginAction" method="{1}">
 			<result name="toLogin">/WEB-INF/admin/login.jsp</result>
 		</action>
 		<action name="register/*" class="com.cpbuy.action.admin.CategoryAction" method="{1}">

@@ -3,12 +3,12 @@
 	<display-name>CPBuy</display-name>
 	<filter>
 		<filter-name>struts2</filter-name>
-		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+		<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter
 		</filter-class>
 		<!-- <filter-class>sso.struts2.StrutsFilter</filter-class> -->
 		<init-param>
 			<param-name>config</param-name>
-			<param-value>struts-default.xml,config/struts2/struts-config.xml
+			<param-value>struts-default.xml,struts-plugin.xml,config/struts2/struts-config.xml
 			</param-value>
 		</init-param>
 	</filter>
