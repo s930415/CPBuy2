@@ -10,7 +10,6 @@
 		<constant name="struts2.sslplugin.httpPort" value="80"/>
 		<constant name="struts2.sslplugin.annotations" value="true"/>
 		<constant name="struts.multipart.maxSize" value="1000000000" />
-		
 		<include file="config/struts2/struts-admin.xml" />
 		<include file="config/struts2/struts-front.xml"/>
 		

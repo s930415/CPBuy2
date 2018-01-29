@@ -24,10 +24,26 @@
 	<bean id="adminDao" class="com.cpbuy.dao.impl.AdminDaoImpl"
 		lazy-init="true">
 		<property name="jdbcTemplate">
-			<ref bean="jdbcTemplate"/>
+			<ref bean="jdbcTemplate" />
 		</property>
 		<property name="rowMapper">
-			<ref bean="adminRowMapper"/>
+			<ref bean="adminRowMapper" />
+		</property>
+	</bean>
+
+	<bean id="categoryRowMapper" class="jdbc.dao.impl.ClassRowMapper"
+		lazy-init="true">
+		<constructor-arg>
+			<value>com.cpbuy.model.Category</value>
+		</constructor-arg>
+	</bean>
+	<bean id="categoryDao" class="com.cpbuy.dao.impl.CategoryDaoImpl"
+		lazy-init="true">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate" />
+		</property>
+		<property name="rowMapper">
+			<ref bean="categoryRowMapper" />
 		</property>
 	</bean>
 </beans>

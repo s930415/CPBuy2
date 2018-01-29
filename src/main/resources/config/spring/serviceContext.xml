@@ -15,9 +15,16 @@
         http://www.springframework.org/schema/task
 		http://www.springframework.org/schema/task/spring-task-3.1.xsd
 		 ">
-	<bean id="adminService" class="com.cpbuy.service.impl.AdminServiceImpl" lazy-init="true">
+	<bean id="adminService" class="com.cpbuy.service.impl.AdminServiceImpl"
+		lazy-init="true">
 		<property name="adminDao">
-			<ref bean="adminDao"/>
+			<ref bean="adminDao" />
+		</property>
+	</bean>
+	<bean id="categoryService" class="com.cpbuy.service.impl.CategoryServiceImpl"
+		lazy-init="true">
+		<property name="categoryDao">
+			<ref bean="categoryDao" />
 		</property>
 	</bean>
 </beans>
