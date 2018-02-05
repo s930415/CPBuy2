@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
 <!-- 前端處理控制 -->
 <struts>
-	<package name="admin" namespace="/admin" extends="struts-default">
+	<package name="admin" namespace="/admin" extends="struts-default" strict-method-invocation="false">
 		<global-results>
 			<result name="error">/WEB-INF/admin/login.jsp</result>
 		</global-results>
 		<global-exception-mappings>
 			<exception-mapping result="error" exception=""></exception-mapping>
 		</global-exception-mappings>
-		<action name="*" class="adminLoginAction" method="{1}">
+		<action name="*" class="adminLoginAction" method="{1}" >
 			<result name="toLogin">/WEB-INF/admin/login.jsp</result>
 		</action>
 		<action name="register/*" class="com.cpbuy.action.admin.CategoryAction" method="{1}">
