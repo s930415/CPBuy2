@@ -22,7 +22,7 @@ public class AdminDaoImpl extends PagingDaoImpl implements IAdminDao {
 		args.add(admin.getAccount());
 		args.add(admin.getPassword());
 		List list = jdbcTemplate.query(sql,args.toArray(),rowMapper);
-		if(list != null && list.size()==0){
+		if(list != null && list.size()!=0){
 			Admin rtn_admin = (Admin)list.get(0);
 			return rtn_admin;
 		}

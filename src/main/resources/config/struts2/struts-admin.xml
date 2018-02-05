@@ -11,6 +11,8 @@
 		</global-exception-mappings>
 		<action name="*" class="adminLoginAction" method="{1}" >
 			<result name="toLogin">/WEB-INF/admin/login.jsp</result>
+			<result name="s_login">/WEB-INF/admin/s_login.jsp</result>
+			<result name="f_login">/WEB-INF/admin/f_login.jsp</result>
 		</action>
 		<action name="register/*" class="com.cpbuy.action.admin.CategoryAction" method="{1}">
 			<result name="toRegister">/WEB-INF/admin/category/toList.jsp</result>

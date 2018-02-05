@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form>
+		<form action="doLogin.jsp" method="post">
 			<table>
 				<tr>
 					<td>帳號</td>
@@ -22,6 +22,7 @@
 					<td><a href="javascript(void);">註冊</a></td>
 				</tr>
 			</table>
+			<input type="submit" value="登入">
 		</form>
 	</div>
 </body>
