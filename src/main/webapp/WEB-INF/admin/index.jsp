@@ -3,14 +3,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>HELLO WORLD</title>
+<title>後台管理</title>
 </head>
 <body>
 	<div class="middle">
 		<div class="left">
-		123
-			<s:list value="pc_list">
-			</s:list>
+			<a href="category/toList.jsp">分類管理</a>
 		</div>
 		<div class="right"></div>
 	</div>

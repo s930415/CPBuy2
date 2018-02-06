@@ -1,7 +1,11 @@
 package com.cpbuy.action.admin;
 
+import java.util.Map;
+
 import com.cpbuy.model.Admin;
 import com.cpbuy.service.IAdminService;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 
 /**
  * 管理者控制
@@ -42,18 +46,23 @@ public class LoginAction extends AdminBaseAction {
 	}
 
 	public String doLogin() {
-		
+
 		Admin l_admin = new Admin();
 		l_admin.setAccount(account);
 		l_admin.setPassword(password);
-		
+
 		admin = adminService.doLogin(l_admin);
-		
-		if(admin != null){
+
+		if (admin != null) {
+			Map session = ActionContext.getContext().getSession();  
+			session.put("Admin", admin);
+			
 			return "s_login";
-		}else{
+		} else {
+			
 			return "f_login";
 		}
 	}
+
 
 }

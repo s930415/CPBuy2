@@ -2,19 +2,26 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
 <!-- 前端處理控制 -->
 <struts>
-	<package name="admin" namespace="/admin" extends="struts-default" strict-method-invocation="false">
+	<package name="admin" namespace="/admin" extends="struts-default"
+		strict-method-invocation="false">
 		<global-results>
 			<result name="error">/WEB-INF/admin/login.jsp</result>
 		</global-results>
 		<global-exception-mappings>
 			<exception-mapping result="error" exception=""></exception-mapping>
 		</global-exception-mappings>
-		<action name="*" class="adminLoginAction" method="{1}" >
+		<action name="*" class="com.cpbuy.action.admin.LoginAction"
+			method="{1}">
+			<result name="toRegister">/WEB-INF/admin/category/toList.jsp</result>
+		</action>
+		<action name="login/*" class="adminLoginAction" method="{1}">
 			<result name="toLogin">/WEB-INF/admin/login.jsp</result>
 			<result name="s_login">/WEB-INF/admin/s_login.jsp</result>
 			<result name="f_login">/WEB-INF/admin/f_login.jsp</result>
+			<result name="toIndex" type="redirect">/admin/index/toIndex.jsp</result>
 		</action>
-		<action name="register/*" class="com.cpbuy.action.admin.CategoryAction" method="{1}">
+		<action name="register/*" class="com.cpbuy.action.admin.CategoryAction"
+			method="{1}">
 			<result name="toRegister">/WEB-INF/admin/category/toList.jsp</result>
 		</action>
 	</package>
