@@ -10,19 +10,22 @@
 		<global-exception-mappings>
 			<exception-mapping result="error" exception=""></exception-mapping>
 		</global-exception-mappings>
-		<action name="*" class="com.cpbuy.action.admin.LoginAction"
+		<action name="*" class="com.cpbuy.action.admin.IndexAction"
 			method="{1}">
-			<result name="toRegister">/WEB-INF/admin/category/toList.jsp</result>
+			<result name="toIndex">/WEB-INF/admin/index.jsp</result>
 		</action>
 		<action name="login/*" class="adminLoginAction" method="{1}">
 			<result name="toLogin">/WEB-INF/admin/login.jsp</result>
-			<result name="s_login">/WEB-INF/admin/s_login.jsp</result>
-			<result name="f_login">/WEB-INF/admin/f_login.jsp</result>
-			<result name="toIndex" type="redirect">/admin/index/toIndex.jsp</result>
+			<result name="s_login" type="redirect">/admin/toIndex.jsp</result>
+			<result name="f_login" type="redirect">/admin/login/toLogin.jsp</result>
 		</action>
-		<action name="register/*" class="com.cpbuy.action.admin.CategoryAction"
+		<action name="register/*" class="adminRegisterAction"
 			method="{1}">
 			<result name="toRegister">/WEB-INF/admin/category/toList.jsp</result>
+		</action>
+		<action name="category/*" class="com.cpbuy.action.admin.CategoryAction"
+			method="{1}">
+			<result name="toList">/WEB-INF/admin/category/toList.jsp</result>
 		</action>
 	</package>
 </struts>

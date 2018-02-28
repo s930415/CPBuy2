@@ -7,6 +7,10 @@ public class CategoryAction extends AdminBaseAction {
 
 	private ICategoryService categoryService;
 
+	public void setCategoryService(ICategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+
 	public String toList() {
 		categoryService.getCategoryList(0);
 		return "toList";

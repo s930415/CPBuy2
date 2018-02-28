@@ -27,8 +27,5 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
-	<error-page>
-		<location>/index.jsp</location>
-	</error-page>
 </web-app>
 

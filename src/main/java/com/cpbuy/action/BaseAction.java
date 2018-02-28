@@ -17,12 +17,10 @@ public class BaseAction extends ActionSupport implements ServletRequestAware , S
 	ServletContext respons =  ServletActionContext.getServletContext();
 	HttpSession session =  ServletActionContext.getRequest().getSession();
 	String MSG;
-	@Override
 	public void setServletResponse(HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
 	public void setServletRequest(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="doLogin.jsp" method="post">
+		<form action="/cpman2/admin/login/doLogin.jsp" method="post">
 			<table>
 				<tr>
 					<td>帳號</td>

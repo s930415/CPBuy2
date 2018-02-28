@@ -10,5 +10,12 @@ public interface IAdminDao {
 	 * @return
 	 */
 	public Admin doLogin(Admin admin);
+	
+	/**
+	 * 後台註冊
+	 * 
+	 * @param admin
+	 */
+	public void doRegist(Admin admin);
 
 }

@@ -21,4 +21,13 @@ public class AdminServiceImpl implements IAdminService {
 		return adminDao.doLogin(admin);
 	}
 
+	/**
+	 * 後台註冊
+	 * 
+	 * @param admin
+	 */
+	public void doRegist(Admin admin) {
+		adminDao.doRegist(admin);
+	}
+
 }
