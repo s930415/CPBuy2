@@ -21,7 +21,7 @@
 			<ref bean="adminService" />
 		</property>
 	</bean>
-	<bean id="adminCategoryAction" class="com.cpbuy.action.cadmin.CategoryAction" scope="prototype">
+	<bean id="adminCategoryAction" class="com.cpbuy.action.admin.CategoryAction" scope="prototype">
 		<property name="categoryService">
 			<ref bean="categoryService" />
 		</property>
