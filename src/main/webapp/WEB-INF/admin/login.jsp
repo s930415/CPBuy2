@@ -5,13 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<%@include file="../jsInit.jsp" %>
 </head>
 <body>
 	<div>
 		<form action="/cpman2/admin/login/doLogin.jsp" method="post">
 			<table>
 				<tr>
-					<td>帳號</td>
+					<td><i class="fas fa-user"></i>帳號</td>
 					<td><input type="text" name="account"></td>
 				</tr>
 				<tr>
