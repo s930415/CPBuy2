@@ -26,6 +26,7 @@
 		<action name="category/*" class="com.cpbuy.action.admin.CategoryAction"
 			method="{1}">
 			<result name="toList">/WEB-INF/admin/category/toList.jsp</result>
+			<result name="toDetail">/WEB-INF/admin/category/toDetail.jsp</result>
 		</action>
 	</package>
 </struts>

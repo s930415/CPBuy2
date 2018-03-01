@@ -23,4 +23,13 @@ public class CategoryServiceImpl implements ICategoryService {
 		return categoryDao.getCategoryList(id);
 	}
 
+	/**
+	 * 取得分類內容
+	 * 
+	 * @return
+	 */
+	public Category getCategoryByid(Integer id) {
+		return categoryDao.getCategoryByid(id);
+	}
+
 }
