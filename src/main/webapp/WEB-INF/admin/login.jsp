@@ -16,11 +16,11 @@
 					<td><input type="text" name="account"></td>
 				</tr>
 				<tr>
-					<td>密碼</td>
+					<td><i class="fas fa-key"></i>密碼</td>
 					<td><input type="password" name="password"></td>
 				</tr>
 				<tr>
-					<td><a href="javascript(void);">註冊</a></td>
+					<td><a href="javascript(void);"><i class="fas fa-registered"></i>註冊</a></td>
 				</tr>
 			</table>
 			<input type="submit" value="登入">
