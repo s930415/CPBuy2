@@ -1,5 +1,7 @@
 package com.cpbuy.action.admin;
 
+import java.util.List;
+
 import com.cpbuy.action.BaseAction;
 import com.cpbuy.model.Category;
 import com.cpbuy.service.ICategoryService;
@@ -9,8 +11,13 @@ public class CategoryAction extends AdminBaseAction {
 	private ICategoryService categoryService;
 	private Integer cg_id;
 	private Category category;
+	private List page_list;
 
 	private Integer s_cg;
+
+	public List getPage_list() {
+		return page_list;
+	}
 
 	public void setCategoryService(ICategoryService categoryService) {
 		this.categoryService = categoryService;
@@ -41,7 +48,7 @@ public class CategoryAction extends AdminBaseAction {
 	}
 
 	public String toList() {
-		categoryService.getCategoryList(0);
+		page_list = categoryService.getCategoryList(0);
 		return "toList";
 	}
 
