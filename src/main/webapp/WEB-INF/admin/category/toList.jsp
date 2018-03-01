@@ -19,16 +19,18 @@
 		<a href="toDeatail.jsp" class="button">新增</a>
 	</div>
 	<div>
-		<tr>
-			<th>ID</th>
-			<th>名稱</th>
-		</tr>
-		<s:iterator value="page_list">
+		<table>
 			<tr>
-				<td>${page_list.id}</td>
-				<td>${page_list.name}</td>
+				<th>ID</th>
+				<th>名稱</th>
 			</tr>
-		</s:iterator>
+			<s:iterator value="page_list">
+				<tr>
+					<td>${page_list.id}</td>
+					<td>${page_list.name}</td>
+				</tr>
+			</s:iterator>
+		</table>
 	</div>
 </body>
 </html>
