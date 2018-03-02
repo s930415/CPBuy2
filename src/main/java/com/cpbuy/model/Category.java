@@ -7,6 +7,19 @@ public class Category {
 	private String name;
 	private String show;
 	private Integer sort;
+	private String icon;
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public void setUp_id(Integer up_id) {
+		this.up_id = up_id;
+	}
 
 	public String getName() {
 		return name;

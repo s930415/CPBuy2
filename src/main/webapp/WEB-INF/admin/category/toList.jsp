@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-
-<!DOCTYPE>
+<%@include file="../../jsInit.jsp"%><!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,18 +15,22 @@
 </head>
 <body>
 	<div>
-		<a href="toDeatail.jsp" class="button">新增</a>
+		<a href="toDetail.jsp" class="button">新增</a>
 	</div>
 	<div>
 		<table>
 			<tr>
 				<th>ID</th>
+				<th>圖標</th>
 				<th>名稱</th>
+				<th>操作</th>
 			</tr>
 			<s:iterator value="page_list">
 				<tr>
-					<td>${page_list.id}</td>
-					<td>${page_list.name}</td>
+					<td>${id}</td>
+					<td><i class='fa fa-${icon}'></i></td></td>
+					<td>${name}</td>
+					<td><a href="toDetail.jsp?cg_id=${id}" class="button">修改</a></td>
 				</tr>
 			</s:iterator>
 		</table>

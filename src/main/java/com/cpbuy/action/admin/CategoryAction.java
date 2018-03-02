@@ -51,13 +51,28 @@ public class CategoryAction extends AdminBaseAction {
 		page_list = categoryService.getCategoryList(0);
 		return "toList";
 	}
-
+	/**
+	 * 詳細頁
+	 * @return
+	 */
 	public String toDetail() {
 		if (cg_id != null) {
 			category = categoryService.getCategoryByid(cg_id);
 		}
-
 		return "toDetail";
+	}
+	/**
+	 * 新增/修改
+	 * @return
+	 */
+	public String doAlert(){
+		
+		if(category.getId() != null){
+			categoryService.addCategory(category);
+		}else{
+			categoryService.modifyCategory(category);
+		}
+		return "toList";
 	}
 
 }

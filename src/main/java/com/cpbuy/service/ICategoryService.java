@@ -20,4 +20,19 @@ public interface ICategoryService {
 	 */
 	public Category getCategoryByid(Integer id);
 
+	/**
+	 * 新增分類
+	 * 
+	 * @param category
+	 * @return
+	 */
+	public Integer addCategory(Category category);
+
+	/**
+	 * 修改分類
+	 * 
+	 * @param category
+	 */
+	public void modifyCategory(Category category);
+
 }

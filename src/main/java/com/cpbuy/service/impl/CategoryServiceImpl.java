@@ -32,4 +32,12 @@ public class CategoryServiceImpl implements ICategoryService {
 		return categoryDao.getCategoryByid(id);
 	}
 
+	public Integer addCategory(Category category) {
+		return categoryDao.addCategory(category);
+	}
+
+	public void modifyCategory(Category category) {
+		categoryDao.modifyCategory(category);
+	}
+
 }
