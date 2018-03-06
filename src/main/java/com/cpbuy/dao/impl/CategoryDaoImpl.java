@@ -50,7 +50,7 @@ public class CategoryDaoImpl extends PagingDaoImpl implements ICategoryDao {
 	 */
 	public Integer addCategory(Category category) {
 		StringBuilder sql = new StringBuilder();
-		sql.append("INSERT INTO CATEGORY ( UP_ID, NAME, SORT, SHOW, ICON ) VALUES (?,?,?,?,?)");
+		sql.append("INSERT INTO CATEGORY ( UP_ID, NAME, SORT, `SHOW`, ICON ) VALUES (?,?,?,?,?)");
 		jdbcTemplate.update(sql.toString(), new Object[] { category.getUp_id(), category.getName(), category.getSort(),
 				category.getShow(), category.getIcon() });
 		return null;
@@ -63,7 +63,7 @@ public class CategoryDaoImpl extends PagingDaoImpl implements ICategoryDao {
 	 */
 	public void modifyCategory(Category category) {
 		StringBuilder sql = new StringBuilder();
-		sql.append("UPDATE CATEGORY SET UP_ID=?, NAME=?, SORT=?, SHOW=?, ICON=? WHERE ID=? ");
+		sql.append("UPDATE CATEGORY SET UP_ID=?, NAME=?, SORT=?, `SHOW`=?, ICON=? WHERE ID=? ");
 		jdbcTemplate.update(sql.toString(), new Object[] { category.getUp_id(), category.getName(), category.getSort(),
 				category.getShow(), category.getIcon(), category.getId() });
 	}

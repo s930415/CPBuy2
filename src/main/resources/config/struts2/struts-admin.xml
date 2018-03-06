@@ -27,6 +27,7 @@
 			method="{1}">
 			<result name="toList">/WEB-INF/admin/category/toList.jsp</result>
 			<result name="toDetail">/WEB-INF/admin/category/toDetail.jsp</result>
+			<result name="redirect_toList" type="redirect">/admin/category/toList.jsp</result>
 		</action>
 	</package>
 </struts>

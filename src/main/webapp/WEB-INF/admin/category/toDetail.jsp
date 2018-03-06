@@ -39,6 +39,7 @@
 						label="標籤"></s:textfield></td>
 			</tr>
 			<s:if test="category.id != null">
+				<s:hidden name="category.id" value="%{category.id}"></s:hidden>
 				<s:submit value="修改"></s:submit>
 			</s:if>
 			<s:else>

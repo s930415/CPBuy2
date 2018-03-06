@@ -67,12 +67,12 @@ public class CategoryAction extends AdminBaseAction {
 	 */
 	public String doAlert(){
 		
-		if(category.getId() != null){
+		if(category.getId() == null){
 			categoryService.addCategory(category);
 		}else{
 			categoryService.modifyCategory(category);
 		}
-		return "toList";
+		return "redirect_toList";
 	}
 
 }

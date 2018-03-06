@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div>
-		<form action="/cpman2/admin/login/doLogin.jsp" method="post">
+		<form action="/admin/login/doLogin.jsp" method="post">
 			<table>
 				<tr>
 					<td><i class="fas fa-user"></i>帳號</td>
