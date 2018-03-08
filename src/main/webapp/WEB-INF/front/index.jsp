@@ -9,8 +9,10 @@
 <s:include value="../jsInit.jsp"></s:include>
 </head>
 <body>
+	<div id="header"></div>
 	<div class="middle" style="height: 500px">
-		<div class="left" style="width: 25%;background-color: gray;height: 100%;">
+		<div class="left"
+			style="width: 25%; background-color: gray; height: 100%;">
 			<h3>分類</h3>
 			<table style="width: 20%;">
 				<s:iterator value="cg_list">
