@@ -5,15 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>HELLO WORLD</title>
+<s:include value="../jsInit.jsp"></s:include>
 </head>
 <body>
-	<div class="middle">
-		<div class="left">
-			前台123
-			<s:iterator value="pc_list">
-			</s:iterator>
+	<div class="middle" style="height: 500px">
+		<div class="left" style="width: 25%;background-color: gray;height: 100%;">
+			<h3>分類</h3>
+			<table style="width: 20%;">
+				<s:iterator value="cg_list">
+					<i class='fa fa-${icon}' style="margin: 5px"></i>
+				</s:iterator>
+			</table>
 		</div>
 		<div class="right"></div>
 	</div>

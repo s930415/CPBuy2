@@ -14,5 +14,8 @@
         http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
          ">
 	<bean id="indexAction" class="com.cpbuy.action.front.IndexAction" scope="prototype">
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
 	</bean>
 </beans>

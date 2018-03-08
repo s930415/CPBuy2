@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
 <!-- 前端處理控制 -->
 <struts>
-	<package name="front" namespace="/" extends="struts-default">
+	<package name="front" namespace="/" extends="struts-default" strict-method-invocation="false">
 		<global-results>
-			<result name="error">/WEB-INF/front/index.jsp</result>
+			<result name="error" type="redirect">/toIndex.jsp</result>
 		</global-results>
 		<global-exception-mappings>
 			<exception-mapping result="error" exception=""></exception-mapping>
