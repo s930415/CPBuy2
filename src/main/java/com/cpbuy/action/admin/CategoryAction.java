@@ -10,10 +10,19 @@ public class CategoryAction extends AdminBaseAction {
 
 	private ICategoryService categoryService;
 	private Integer cg_id;
+	private Integer up_id;
 	private Category category;
 	private List page_list;
 
 	private Integer s_cg;
+
+	public Integer getUp_id() {
+		return up_id;
+	}
+
+	public void setUp_id(Integer up_id) {
+		this.up_id = up_id;
+	}
 
 	public List getPage_list() {
 		return page_list;
@@ -48,28 +57,35 @@ public class CategoryAction extends AdminBaseAction {
 	}
 
 	public String toList() {
-		page_list = categoryService.getCategoryList(0);
+		page_list = categoryService.getCategoryList(up_id != null ? up_id : 0);
 		return "toList";
 	}
+
 	/**
 	 * 詳細頁
+	 * 
 	 * @return
 	 */
 	public String toDetail() {
 		if (cg_id != null) {
 			category = categoryService.getCategoryByid(cg_id);
+		} else {
+			category = new Category(); 
+			category.setUp_id(up_id);
 		}
 		return "toDetail";
 	}
+
 	/**
 	 * 新增/修改
+	 * 
 	 * @return
 	 */
-	public String doAlert(){
-		
-		if(category.getId() == null){
+	public String doAlert() {
+
+		if (category.getId() == null) {
 			categoryService.addCategory(category);
-		}else{
+		} else {
 			categoryService.modifyCategory(category);
 		}
 		return "redirect_toList";

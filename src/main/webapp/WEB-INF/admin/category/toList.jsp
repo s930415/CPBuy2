@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div>
-		<a href="toDetail.jsp" class="button">新增</a>
+		<a href="toDetail.jsp?up_id=${up_id}" class="button">新增</a>
 	</div>
 	<div>
 		<table>
@@ -30,7 +30,10 @@
 					<td>${id}</td>
 					<td><i class='fa fa-${icon}'></i></td></td>
 					<td>${name}</td>
-					<td><a href="toDetail.jsp?cg_id=${id}" class="button">修改</a></td>
+					<td>
+						<a href="toDetail.jsp?cg_id=${id}" class="button">修改</a>
+						<a href="toList.jsp?up_id=${id}" class="button">修改管理下層</a>
+					</td>
 				</tr>
 			</s:iterator>
 		</table>
