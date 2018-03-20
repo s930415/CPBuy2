@@ -25,5 +25,8 @@ public class BaseAction extends ActionSupport implements ServletRequestAware , S
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	public void validate(){
+		String path = request.getContextPath();
+	}
 }
