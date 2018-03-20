@@ -1,5 +1,7 @@
 package com.cpbuy.model;
 
+import java.util.List;
+
 public class Product {
 
 	private Integer id; // 商品流水號
