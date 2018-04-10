@@ -1,6 +1,7 @@
 package com.cpbuy.model;
 
 public class Admin {
+
 	private Integer id;
 	private String account;
 	private String password;
