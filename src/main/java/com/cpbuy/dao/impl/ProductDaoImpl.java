@@ -5,11 +5,11 @@ import java.util.List;
 
 import com.cpbuy.model.Product;
 
-public class ProdouctDaoImpl {
+public class ProductDaoImpl {
 
 	public List getList(Product product) {
 		StringBuilder sql = new StringBuilder();
-		List args = new ArrayList<>();
+		List args = new ArrayList();
 		sql.append("SELECT * FROM PRODUCT WHERE 1=1 ");
 		args.add(product.getName());
 		args.add(product.getPrice());
@@ -19,7 +19,7 @@ public class ProdouctDaoImpl {
 	
 	public Integer addProduct(Product product) {
 		StringBuilder sql = new StringBuilder();
-		List args = new ArrayList<>();
+		List args = new ArrayList();
 		sql.append("INSERT INTO PRODUCT (ID,NAME,PRICE,CONTENT) values (?,?,?,?,?)  ");
 		args.add(product.getName());
 		args.add(product.getPrice());
@@ -29,7 +29,7 @@ public class ProdouctDaoImpl {
 	
 	public Integer updateProduct(Product product) {
 		StringBuilder sql = new StringBuilder();
-		List args = new ArrayList<>();
+		List args = new ArrayList();
 		sql.append("UPDATE PRODUCT SET NAME=?,PRICE=?,CONTENT=? WHERE ID=? ");
 		args.add(product.getName());
 		args.add(product.getPrice());
