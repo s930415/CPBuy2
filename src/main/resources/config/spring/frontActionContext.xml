@@ -13,9 +13,16 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
          ">
-	<bean id="indexAction" class="com.cpbuy.action.front.IndexAction" scope="prototype">
+	<bean id="indexAction" class="com.cpbuy.action.front.IndexAction"
+		scope="prototype">
 		<property name="categoryService">
-			<ref bean="categoryService"/>
+			<ref bean="categoryService" />
+		</property>
+	</bean>
+	<bean id="productAction" class="com.cpbuy.action.front.ProductAction"
+		scope="prototype">
+		<property name="productService">
+			<ref bean="productService" />
 		</property>
 	</bean>
 </beans>

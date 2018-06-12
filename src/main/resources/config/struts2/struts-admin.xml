@@ -19,15 +19,20 @@
 			<result name="s_login" type="redirect">/admin/toIndex.jsp</result>
 			<result name="f_login" type="redirect">/admin/login/toLogin.jsp</result>
 		</action>
-		<action name="register/*" class="adminRegisterAction"
-			method="{1}">
+		<action name="register/*" class="adminRegisterAction" method="{1}">
 			<result name="toRegister">/WEB-INF/admin/category/toList.jsp</result>
 		</action>
-		<action name="category/*" class="com.cpbuy.action.admin.CategoryAction"
-			method="{1}">
+		<action name="category/*" class="adminCategoryAction" method="{1}">
 			<result name="toList">/WEB-INF/admin/category/toList.jsp</result>
 			<result name="toDetail">/WEB-INF/admin/category/toDetail.jsp</result>
-			<result name="redirect_toList" type="redirect">/admin/category/toList.jsp</result>
+			<result name="redirect_toList" type="redirect">/admin/category/toList.jsp
+			</result>
+		</action>
+		<action name="product/*" class="adminProductAction" method="{1}">
+			<result name="toList">/WEB-INF/admin/product/toList.jsp</result>
+			<result name="toDetail">/WEB-INF/admin/product/toDetail.jsp</result>
+			<result name="redirect_toList" type="redirect">/admin/product/toList.jsp
+			</result>
 		</action>
 	</package>
 </struts>

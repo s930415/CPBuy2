@@ -1,4 +1,4 @@
-package com.cpbuy.action.admin;
+package com.cpbuy.action.front;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import com.cpbuy.model.Product;
 import com.cpbuy.service.IProductService;
 import com.cpbuy.service.impl.ProductServiceImpl;
 
-public class ProductAction extends AdminBaseAction {
+public class ProductAction extends FrontBaseAction {
 	private IProductService productService;
 	private Product product;
 	private Product s_product;

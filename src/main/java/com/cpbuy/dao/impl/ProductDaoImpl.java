@@ -3,20 +3,45 @@ package com.cpbuy.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.cpbuy.dao.ICategoryDao;
+import com.cpbuy.dao.IProductDao;
 import com.cpbuy.model.Product;
 
-public class ProductDaoImpl {
+import jdbc.dao.impl.PagingDaoImpl;
 
+public class ProductDaoImpl extends PagingDaoImpl implements IProductDao {
+	/**
+	 * 取得產品列表
+	 * 
+	 * @param product
+	 * @return
+	 */
 	public List getList(Product product) {
 		StringBuilder sql = new StringBuilder();
 		List args = new ArrayList();
 		sql.append("SELECT * FROM PRODUCT WHERE 1=1 ");
-		args.add(product.getName());
-		args.add(product.getPrice());
-		args.add(product.getContent());
+		if (product.getName() != null && !product.getName().equals("")) {
+			args.add("%" + product.getName() + "%");
+			sql.append("AND NAME = ? ");
+		}
+		if (product.getName() != null && !product.getName().equals("")) {
+			args.add(product.getContent());
+			sql.append("AND CONTENT = ? ");
+		}
+		if (product.getName() != null && !product.getName().equals("")) {
+			args.add(product.getPrice());
+			sql.append("AND PRICE = ? ");
+		}
+		List list = jdbcTemplate.queryForList(sql.toString(), args.toArray());
 		return null;
 	}
-	
+
+	/**
+	 * 新增商品
+	 * 
+	 * @param product
+	 * @return
+	 */
 	public Integer addProduct(Product product) {
 		StringBuilder sql = new StringBuilder();
 		List args = new ArrayList();
@@ -26,7 +51,13 @@ public class ProductDaoImpl {
 		args.add(product.getContent());
 		return null;
 	}
-	
+
+	/**
+	 * 修改商品
+	 * 
+	 * @param product
+	 * @return
+	 */
 	public Integer updateProduct(Product product) {
 		StringBuilder sql = new StringBuilder();
 		List args = new ArrayList();
@@ -34,8 +65,8 @@ public class ProductDaoImpl {
 		args.add(product.getName());
 		args.add(product.getPrice());
 		args.add(product.getContent());
-		args.add(product.getId()); 
-		return null; 
+		args.add(product.getId());
+		return null;
 	}
 
 }

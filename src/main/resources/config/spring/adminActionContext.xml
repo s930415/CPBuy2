@@ -15,20 +15,29 @@
         http://www.springframework.org/schema/task
 		http://www.springframework.org/schema/task/spring-task-3.1.xsd
 		 ">
-		 
-	<bean id="adminLoginAction" class="com.cpbuy.action.admin.LoginAction" scope="prototype">
+
+	<bean id="adminLoginAction" class="com.cpbuy.action.admin.LoginAction"
+		scope="prototype">
 		<property name="adminService">
 			<ref bean="adminService" />
 		</property>
 	</bean>
-	<bean id="adminCategoryAction" class="com.cpbuy.action.admin.CategoryAction" scope="prototype">
+	<bean id="adminCategoryAction" class="com.cpbuy.action.admin.CategoryAction"
+		scope="prototype">
 		<property name="categoryService">
 			<ref bean="categoryService" />
 		</property>
 	</bean>
-	<bean id="adminRegisterAction" class="com.cpbuy.action.admin.RegisterAction" scope="prototype">
+	<bean id="adminRegisterAction" class="com.cpbuy.action.admin.RegisterAction"
+		scope="prototype">
 		<property name="adminService">
 			<ref bean="adminService" />
+		</property>
+	</bean>
+	<bean id="adminProductAction" class="com.cpbuy.action.admin.ProductAction"
+		scope="prototype">
+		<property name="productService">
+			<ref bean="productService" />
 		</property>
 	</bean>
 </beans>

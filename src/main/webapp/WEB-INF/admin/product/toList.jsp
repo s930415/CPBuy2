@@ -25,11 +25,12 @@
 				<th>名稱</th>
 				<th>操作</th>
 			</tr>
-			<s:iterator value="page_list">
+			<s:iterator value="product_list">
 				<tr>
 					<td>${id}</td>
-					<td><i class='fa fa-${icon}'></i></td>
 					<td>${name}</td>
+					<td>${price}</td>
+					<td>${content}</td>
 					<td>
 						<a href="toDetail.jsp?cg_id=${id}" class="button">修改</a>
 						<a href="toList.jsp?up_id=${id}" class="button">修改管理下層</a>

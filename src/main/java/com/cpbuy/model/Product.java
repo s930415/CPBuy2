@@ -6,6 +6,15 @@ public class Product {
 	private String name; // 商品名稱
 	private Integer price; // 價錢
 	private String content; // 內容
+	private Integer pc_id;	//分類流水
+
+	public Integer getPc_id() {
+		return pc_id;
+	}
+
+	public void setPc_id(Integer pc_id) {
+		this.pc_id = pc_id;
+	}
 
 	public Integer getId() {
 		return id;
