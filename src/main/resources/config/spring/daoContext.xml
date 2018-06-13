@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
         http://www.springframework.org/schema/task
 		http://www.springframework.org/schema/task/spring-task-3.1.xsd
-		 ">
+		 " default-lazy-init="true">
 	<bean id="adminRowMapper" class="jdbc.dao.impl.ClassRowMapper"
 		lazy-init="true">
 		<constructor-arg>
@@ -44,6 +44,21 @@
 		</property>
 		<property name="rowMapper">
 			<ref bean="categoryRowMapper" />
+		</property>
+	</bean>
+	<bean id="productRowMapper" class="jdbc.dao.impl.ClassRowMapper"
+		lazy-init="true">
+		<constructor-arg>
+			<value>com.cpbuy.model.Product</value>
+		</constructor-arg>
+	</bean>
+	<bean id="productDao" class="com.cpbuy.dao.impl.ProductDaoImpl"
+		lazy-init="true">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate" />
+		</property>
+		<property name="rowMapper">
+			<ref bean="productRowMapper" />
 		</property>
 	</bean>
 </beans>

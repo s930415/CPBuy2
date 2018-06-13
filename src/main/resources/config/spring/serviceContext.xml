@@ -25,4 +25,9 @@
 			<ref bean="categoryDao" />
 		</property>
 	</bean>
+	<bean id="productService" class="com.cpbuy.service.impl.ProductServiceImpl">
+		<property name="productDao">
+			<ref bean="productDao" />
+		</property>
+	</bean>
 </beans>
