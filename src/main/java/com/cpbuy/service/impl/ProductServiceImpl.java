@@ -13,6 +13,10 @@ public class ProductServiceImpl implements IProductService {
 
 	IProductDao productDao;
 
+	public void setProductDao(IProductDao productDao) {
+		this.productDao = productDao;
+	}
+
 	public List getList(Product product) {
 		return productDao.getList(product);
 	}
