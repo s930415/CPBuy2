@@ -9,4 +9,8 @@ public class AdminBaseAction extends BaseAction {
 
 	Admin admin;
 	
+	public String checkLogin(){
+	return "test";	
+	}
+	
 }
