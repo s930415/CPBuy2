@@ -46,4 +46,19 @@
 			<ref bean="categoryRowMapper" />
 		</property>
 	</bean>
+	<bean id="productRowMapper" class="jdbc.dao.impl.ClassRowMapper"
+		lazy-init="true">
+		<constructor-arg>
+			<value>com.cpbuy.model.Product</value>
+		</constructor-arg>
+	</bean>
+	<bean id="productDao" class="com.cpbuy.dao.impl.ProductDaoImpl"
+		lazy-init="true">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate" />
+		</property>
+		<property name="rowMapper">
+			<ref bean="productRowMapper" />
+		</property>
+	</bean>
 </beans>

@@ -11,6 +11,7 @@
 	<div class="middle">
 		<div class="left">
 			<a href="category/toList.jsp">分類管理</a>
+			<a href="product/toList.jsp">產品管理</a>
 		</div>
 		<div class="right"></div>
 	</div>

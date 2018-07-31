@@ -20,20 +20,22 @@ public class ProductDaoImpl extends PagingDaoImpl implements IProductDao {
 		StringBuilder sql = new StringBuilder();
 		List args = new ArrayList();
 		sql.append("SELECT * FROM PRODUCT WHERE 1=1 ");
-		if (product.getName() != null && !product.getName().equals("")) {
-			args.add("%" + product.getName() + "%");
-			sql.append("AND NAME = ? ");
-		}
-		if (product.getName() != null && !product.getName().equals("")) {
-			args.add(product.getContent());
-			sql.append("AND CONTENT = ? ");
-		}
-		if (product.getName() != null && !product.getName().equals("")) {
-			args.add(product.getPrice());
-			sql.append("AND PRICE = ? ");
+		if (product != null) {
+			if (product.getName() != null && !product.getName().equals("")) {
+				args.add("%" + product.getName() + "%");
+				sql.append("AND NAME = ? ");
+			}
+			if (product.getName() != null && !product.getName().equals("")) {
+				args.add(product.getContent());
+				sql.append("AND CONTENT = ? ");
+			}
+			if (product.getName() != null && !product.getName().equals("")) {
+				args.add(product.getPrice());
+				sql.append("AND PRICE = ? ");
+			}
 		}
 		List list = jdbcTemplate.queryForList(sql.toString(), args.toArray());
-		return null;
+		return list;
 	}
 
 	/**

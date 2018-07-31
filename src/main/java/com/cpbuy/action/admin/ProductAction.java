@@ -1,12 +1,14 @@
 package com.cpbuy.action.admin;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
+
+import org.apache.commons.io.FileUtils;
 
 import com.cpbuy.model.Category;
 import com.cpbuy.model.Product;
 import com.cpbuy.service.IProductService;
-import com.cpbuy.service.impl.ProductServiceImpl;
 
 public class ProductAction extends AdminBaseAction {
 	private IProductService productService;
@@ -96,5 +98,17 @@ public class ProductAction extends AdminBaseAction {
 	public String toDetail() {
 		product = productService.getProductByid(p_id);
 		return "toDetail";
+	}
+
+	public String doAlert() {
+		if (product.getId() == null) {
+			productService.addProduct(product);
+		}
+		try {
+			FileUtils.copyFile(product_img, new File("upload/", product_imgFileName));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "redirect_toList";
 	}
 }

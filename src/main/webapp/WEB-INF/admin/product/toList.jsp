@@ -26,6 +26,7 @@
 				<th>名稱</th>
 				<th>操作</th>
 			</tr>
+			<!-- 
 			<s:iterator value="product_list">
 				<tr>
 					<td>${id}</td>
@@ -36,6 +37,7 @@
 					</td>
 				</tr>
 			</s:iterator>
+			-->
 		</table>
 	</div>
 </body>

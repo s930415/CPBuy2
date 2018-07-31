@@ -10,7 +10,7 @@
 <title>產品管理</title>
 </head>
 <body>
-	<div>
+	<div class="row">
 		<s:form id="baseForm" action="product/doAlert" method="POST"
 			enctype="multipart/form-data">
 			<s:if test="product.id != null">
@@ -37,7 +37,7 @@
 					</s:iterator></td>
 			</tr>
 			<tr>
-				<s:file label="圖片" size="40" name="prodcut_img"></s:file>
+				<s:file label="圖片" size="40" name="product_img"></s:file>
 			</tr>
 			<s:if test="product.id != null">
 				<s:hidden name="product.id" value="%{product.id}"></s:hidden>
