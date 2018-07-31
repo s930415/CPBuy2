@@ -1,5 +1,6 @@
 package com.cpbuy.action.admin;
 
+import java.io.File;
 import java.util.List;
 
 import com.cpbuy.model.Category;
@@ -13,6 +14,43 @@ public class ProductAction extends AdminBaseAction {
 	private Product s_product;
 	private List<Category> c_list;
 	private List product_list;
+	private Integer p_id;
+
+	private File product_img;
+	private String product_imgContentType;
+	private String product_imgFileName;
+
+	public File getProduct_img() {
+		return product_img;
+	}
+
+	public void setProduct_img(File product_img) {
+		this.product_img = product_img;
+	}
+
+	public String getProduct_imgContentType() {
+		return product_imgContentType;
+	}
+
+	public void setProduct_imgContentType(String product_imgContentType) {
+		this.product_imgContentType = product_imgContentType;
+	}
+
+	public String getProduct_imgFileName() {
+		return product_imgFileName;
+	}
+
+	public void setProduct_imgFileName(String product_imgFileName) {
+		this.product_imgFileName = product_imgFileName;
+	}
+
+	public Integer getP_id() {
+		return p_id;
+	}
+
+	public void setP_id(Integer p_id) {
+		this.p_id = p_id;
+	}
 
 	public List getProduct_list() {
 		return product_list;
@@ -55,4 +93,8 @@ public class ProductAction extends AdminBaseAction {
 		return "toList";
 	}
 
+	public String toDetail() {
+		product = productService.getProductByid(p_id);
+		return "toDetail";
+	}
 }

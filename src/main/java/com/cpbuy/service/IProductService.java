@@ -8,11 +8,17 @@ import com.cpbuy.model.Product;;
 public interface IProductService {
 	/**
 	 * 取得產品列表
-	 * 
 	 * @param product
 	 * @return
 	 */
 	public List getList(Product product);
+	
+	/**
+	 * 取得產品
+	 * @param id
+	 * @return
+	 */
+	public Product getProductByid(Integer id);
 
 	/**
 	 * 新增商品

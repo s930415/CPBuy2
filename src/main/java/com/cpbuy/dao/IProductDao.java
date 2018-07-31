@@ -14,6 +14,13 @@ public interface IProductDao {
 	 * @return
 	 */
 	public List getList(Product product);
+	
+	/**
+	 * 取得產品
+	 * @param id
+	 * @return
+	 */
+	public Product getProductByid(Integer id);
 
 	/**
 	 * 新增商品

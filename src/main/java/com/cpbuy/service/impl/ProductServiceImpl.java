@@ -26,6 +26,15 @@ public class ProductServiceImpl implements IProductService {
 	}
 
 	/**
+	 * 取得產品
+	 * @param id
+	 * @return
+	 */
+	public Product getProductByid(Integer id){
+		return productDao.getProductByid(id);
+	}
+	
+	/**
 	 * 新增商品
 	 * 
 	 * @param product

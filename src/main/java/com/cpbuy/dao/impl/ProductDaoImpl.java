@@ -37,6 +37,22 @@ public class ProductDaoImpl extends PagingDaoImpl implements IProductDao {
 	}
 
 	/**
+	 * 取得產品
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Product getProductByid(Integer id) {
+		Product product = null;
+		String sql = "SELECT * FROM PRODUCT WHERE ID = ? ";
+		List list = jdbcTemplate.queryForList(sql, new Object[] { id });
+		if (list != null && list.size() > 0) {
+			product = (Product) list.get(0);
+		}
+		return product;
+	}
+
+	/**
 	 * 新增商品
 	 * 
 	 * @param product

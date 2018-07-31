@@ -7,39 +7,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewpoint"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>分類管理</title>
+<title>產品管理</title>
 </head>
 <body>
 	<div>
-		<s:form id="baseForm" action="category/doAlert">
-			<tr>
-				<td><s:textfield type="text" name="category.up_id" label="上層編號"
-						value="%{category.up_id}"></s:textfield></td>
-			</tr>
-			<s:if test="category.id != null">
+		<s:form id="baseForm" action="product/doAlert" method="POST"
+			enctype="multipart/form-data">
+			<s:if test="product.id != null">
 				<tr>
-					<td><s:textfield value="%{category.id}" label="編號"
+					<td><s:textfield value="%{product.id}" label="編號"
 							readonly="true"></s:textfield></td>
 				</tr>
 			</s:if>
 			<tr>
-				<td><s:textfield name="category.name" value="%{category.name}"
+				<td><s:textfield name="product.name" value="%{product.name}"
 						label="名稱"></s:textfield></td>
 			</tr>
 			<tr>
-				<td><s:textfield name="category.show" value="%{category.show}"
+				<td><s:textfield name="product.show" value="%{product.show}"
 						label="顯示"></s:textfield></td>
 			</tr>
 			<tr>
-				<td><s:textfield name="category.sort" value="%{category.sort}"
+				<td><s:textfield name="product.sort" value="%{product.sort}"
 						label="排序"></s:textfield></td>
 			</tr>
 			<tr>
-				<td><s:textfield name="category.icon" value="%{category.icon}"
-						label="標籤"></s:textfield></td>
+				<td>分類<a>+</a></td>
+				<td><s:iterator var="category_list">
+					</s:iterator></td>
 			</tr>
-			<s:if test="category.id != null">
-				<s:hidden name="category.id" value="%{category.id}"></s:hidden>
+			<tr>
+				<s:file label="圖片" size="40" name="prodcut_img"></s:file>
+			</tr>
+			<s:if test="product.id != null">
+				<s:hidden name="product.id" value="%{product.id}"></s:hidden>
 				<s:submit value="修改"></s:submit>
 			</s:if>
 			<s:else>
