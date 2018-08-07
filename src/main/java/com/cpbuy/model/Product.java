@@ -6,7 +6,16 @@ public class Product {
 	private String name; // 商品名稱
 	private Integer price; // 價錢
 	private String content; // 內容
-	private Integer pc_id;	//分類流水
+	private Integer pc_id; // 分類流水
+	private String img_url; // 圖片位置
+
+	public String getImg_url() {
+		return img_url;
+	}
+
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
+	}
 
 	public Integer getPc_id() {
 		return pc_id;

@@ -10,17 +10,20 @@
 </head>
 <body>
 	<div id="header" class="container-fluid"></div>
-	<div class="middle" style="height: 1000px">
-		<div class="left"
-			style="width: 20%; background-color: gray; height: 100%;" class="rounded">
+	<div class="row" style="height: 1000px">
+		<div class="col-md-3"
+			style="width: 20%; background-color: gray; height: 100%;"
+			class="rounded">
 			<h3>分類</h3>
-			<table style="width: 20%;">
+			<div class="row">
 				<s:iterator value="cg_list">
-					<i class='fa fa-${icon}' style="margin: 5px"></i>
+					<div class="col-md-1">
+						<i class='fa fa-${icon}'></i>
+					</div>
 				</s:iterator>
-			</table>
+			</div>
 		</div>
-		<div class="right"></div>
+		<div class="col-md-9"></div>
 	</div>
 </body>
 </html>

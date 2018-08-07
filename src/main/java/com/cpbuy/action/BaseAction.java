@@ -11,22 +11,24 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BaseAction extends ActionSupport implements ServletRequestAware , ServletResponseAware {
-	
-	HttpServletRequest request = ServletActionContext.getRequest();
-	ServletContext respons =  ServletActionContext.getServletContext();
-	HttpSession session =  ServletActionContext.getRequest().getSession();
-	String MSG;
+public class BaseAction extends ActionSupport implements ServletRequestAware, ServletResponseAware {
+
+	protected HttpServletRequest request = ServletActionContext.getRequest();
+	protected ServletContext respons = ServletActionContext.getServletContext();
+	protected HttpSession session = ServletActionContext.getRequest().getSession();
+	protected String MSG;
+
 	public void setServletResponse(HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	public void setServletRequest(HttpServletRequest request) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
-	public void validate(){
+
+	public void validate() {
 		String path = request.getContextPath();
 	}
 }

@@ -2,25 +2,34 @@ package com.cpbuy.action.admin;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
 import com.cpbuy.model.Category;
 import com.cpbuy.model.Product;
+import com.cpbuy.service.IProductCategoryService;
 import com.cpbuy.service.IProductService;
 
 public class ProductAction extends AdminBaseAction {
 	private IProductService productService;
-	private Product product;
+	private IProductCategoryService productCategoryService;
+
+	private Product product; 
 	private Product s_product;
 	private List<Category> c_list;
 	private List product_list;
 	private Integer p_id;
+	private List category_list; // 分類列表
 
 	private File product_img;
 	private String product_imgContentType;
 	private String product_imgFileName;
+
+	public void setProductCategoryService(IProductCategoryService productCategoryService) {
+		this.productCategoryService = productCategoryService;
+	}
 
 	public File getProduct_img() {
 		return product_img;
@@ -101,14 +110,20 @@ public class ProductAction extends AdminBaseAction {
 	}
 
 	public String doAlert() {
-		if (product.getId() == null) {
-			productService.addProduct(product);
-		}
 		try {
 			FileUtils.copyFile(product_img, new File("upload/", product_imgFileName));
+			product.setImg_url("upload/" + product_imgFileName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		if (product.getId() == null) {
+			productService.addProduct(product);
+		}
 		return "redirect_toList";
+	}
+
+	public void addCategory() {
+		List c_list = new ArrayList<>();
+		productCategoryService.addCategoryForProduct(c_list, p_id);
 	}
 }

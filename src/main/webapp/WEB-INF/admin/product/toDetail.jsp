@@ -24,12 +24,12 @@
 						label="名稱"></s:textfield></td>
 			</tr>
 			<tr>
-				<td><s:textfield name="product.show" value="%{product.show}"
-						label="顯示"></s:textfield></td>
+				<td><s:textfield name="product.price" value="%{product.price}"
+						label="價錢"></s:textfield></td>
 			</tr>
 			<tr>
-				<td><s:textfield name="product.sort" value="%{product.sort}"
-						label="排序"></s:textfield></td>
+				<td><s:textarea name="product.content"
+						value="%{product.content}" label="內容" cols="40" rows="10" /></td>
 			</tr>
 			<tr>
 				<td>分類<a>+</a></td>

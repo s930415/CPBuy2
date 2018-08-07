@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="middle">
+		我是頭
 	</div>
 </body>
 </html>
