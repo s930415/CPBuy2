@@ -2,6 +2,7 @@ package com.cpbuy.action.admin;
 
 import java.util.Map;
 
+import com.cpbuy.action.BaseAction;
 import com.cpbuy.model.Admin;
 import com.cpbuy.service.IAdminService;
 import com.opensymphony.xwork2.ActionContext;
@@ -13,7 +14,7 @@ import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
  * @author vincent
  *
  */
-public class LoginAction extends AdminBaseAction {
+public class LoginAction extends BaseAction {
 
 	private String account;
 	private String password;
@@ -51,7 +52,7 @@ public class LoginAction extends AdminBaseAction {
 		l_admin.setAccount(account);
 		l_admin.setPassword(password);
 
-		admin = adminService.doLogin(l_admin);
+		Admin admin = adminService.doLogin(l_admin);
 
 		if (admin != null) {
 			Map session = ActionContext.getContext().getSession();  

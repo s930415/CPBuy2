@@ -17,6 +17,15 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
 	protected ServletContext respons = ServletActionContext.getServletContext();
 	protected HttpSession session = ServletActionContext.getRequest().getSession();
 	protected String MSG;
+	protected String BASE_PATH;
+
+	public String getBASE_PATH() {
+		return BASE_PATH;
+	}
+
+	public void setBASE_PATH(String bASE_PATH) {
+		BASE_PATH = bASE_PATH;
+	}
 
 	public void setServletResponse(HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -27,8 +36,9 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
 		// TODO Auto-generated method stub
 
 	}
-
+	
 	public void validate() {
 		String path = request.getContextPath();
+		BASE_PATH = "http://localhost:8080";
 	}
 }

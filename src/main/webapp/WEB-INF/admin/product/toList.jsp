@@ -24,20 +24,21 @@
 				<th>ID</th>
 				<th>圖標</th>
 				<th>名稱</th>
+				<th>資料<th>
 				<th>操作</th>
 			</tr>
-			<!-- 
+			
 			<s:iterator value="product_list">
 				<tr>
 					<td>${id}</td>
+					<td><img src="${BASE_PATH}${img_url}"></td>
 					<td>${name}</td>
-					<td>${price}</td>
 					<td>${content}</td>
 					<td><a href="toDetail.jsp?product_id=${id}" class="button">修改</a>
 					</td>
 				</tr>
 			</s:iterator>
-			-->
+			
 		</table>
 	</div>
 </body>

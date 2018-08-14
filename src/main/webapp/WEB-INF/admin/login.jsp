@@ -20,7 +20,7 @@
 					<td><input type="password" name="password"></td>
 				</tr>
 				<tr>
-					<td><a href="javascript(void);"><i class="fas fa-registered"></i>註冊</a></td>
+					<td><a href="javascript:void(0)"><i class="fas fa-registered"></i>註冊</a></td>
 				</tr>
 			</table>
 			<input type="submit" value="登入">

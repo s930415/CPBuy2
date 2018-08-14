@@ -111,8 +111,8 @@ public class ProductAction extends AdminBaseAction {
 
 	public String doAlert() {
 		try {
-			FileUtils.copyFile(product_img, new File("upload/", product_imgFileName));
-			product.setImg_url("upload/" + product_imgFileName);
+			FileUtils.copyFile(product_img, new File("/Users/yvonne/Desktop/未命名檔案夾/CPBuy2/src/main/webapp/upload/", product_imgFileName));
+			product.setImg_url("/Users/yvonne/Desktop/未命名檔案夾/CPBuy2/src/main/webapp/upload/" + product_imgFileName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

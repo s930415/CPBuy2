@@ -63,10 +63,10 @@ public class ProductDaoImpl extends PagingDaoImpl implements IProductDao {
 	public Integer addProduct(Product product) {
 		StringBuilder sql = new StringBuilder();
 		List args = new ArrayList();
-		sql.append("INSERT INTO PRODUCT (NAME,PRICE,CONTENT,IMG_URL) values (?,?,?,?) ");
+		sql.append("INSERT INTO PRODUCT (NAME,CONTENT,IMG_URL) values (?,?,?) ");
 		args.add(product.getName());
-		args.add(product.getPrice());
 		args.add(product.getContent());
+		args.add(product.getImg_url());
 		jdbcTemplate.update(sql.toString(), args.toArray());
 		return null;
 	}
