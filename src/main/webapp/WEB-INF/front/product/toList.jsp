@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>分類管理</title>
+<title>產品列表</title>
 <style type="text/css">
 .buuton {
 	padding: 3px 3px 2px 2px;
@@ -15,15 +15,12 @@
 </head>
 <body>
 	<div>
-		<a href="toDetail.jsp?up_id=${up_id}" class="button">新增</a>
-	</div>
-	<div>
 		<table>
 			<tr>
 				<th>ID</th>
-				<th>圖標</th>
 				<th>名稱</th>
-				<th>操作</th>
+				<th>圖標</th>
+				<th>內容</th>
 			</tr>
 			<s:iterator value="product_list">
 				<tr>
@@ -31,10 +28,6 @@
 					<td>${name}</td>
 					<td>${price}</td>
 					<td>${content}</td>
-					<td>
-						<a href="toDetail.jsp?cg_id=${id}" class="button">修改</a>
-						<a href="toList.jsp?up_id=${id}" class="button">修改管理下層</a>
-					</td>
 				</tr>
 			</s:iterator>
 		</table>

@@ -2,30 +2,48 @@ package com.cpbuy.action.admin;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
 import com.cpbuy.model.Category;
 import com.cpbuy.model.Product;
+import com.cpbuy.service.ICategoryService;
 import com.cpbuy.service.IProductCategoryService;
 import com.cpbuy.service.IProductService;
 
 public class ProductAction extends AdminBaseAction {
 	private IProductService productService;
 	private IProductCategoryService productCategoryService;
-
-	private Product product; 
-	private Product s_product;
+	private ICategoryService categoryService;
+	
+	//呈現用參數
+	private Product product;
 	private List<Category> c_list;
+	private List pc_list;
 	private List product_list;
 	private Integer p_id;
 	private List category_list; // 分類列表
-
+	
+	//搜尋用參數
+	private Product s_product;	//搜尋用產品
+	
+	//圖片上傳用
 	private File product_img;
 	private String product_imgContentType;
 	private String product_imgFileName;
+
+	public List getPc_list() {
+		return pc_list;
+	}
+
+	public void setPc_list(List pc_list) {
+		this.pc_list = pc_list;
+	}
+
+	public void setCategoryService(ICategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
 
 	public void setProductCategoryService(IProductCategoryService productCategoryService) {
 		this.productCategoryService = productCategoryService;
@@ -106,12 +124,14 @@ public class ProductAction extends AdminBaseAction {
 
 	public String toDetail() {
 		product = productService.getProductByid(p_id);
+		c_list = productCategoryService.getListByProductId(p_id, null);
 		return "toDetail";
 	}
 
 	public String doAlert() {
 		try {
-			FileUtils.copyFile(product_img, new File("/Users/yvonne/Desktop/未命名檔案夾/CPBuy2/src/main/webapp/upload/", product_imgFileName));
+			FileUtils.copyFile(product_img,
+					new File("/Users/yvonne/Desktop/未命名檔案夾/CPBuy2/src/main/webapp/upload/", product_imgFileName));
 			product.setImg_url("/Users/yvonne/Desktop/未命名檔案夾/CPBuy2/src/main/webapp/upload/" + product_imgFileName);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -121,9 +141,19 @@ public class ProductAction extends AdminBaseAction {
 		}
 		return "redirect_toList";
 	}
-
+	/**
+	 * 新增分類
+	 */
 	public void addCategory() {
-		List c_list = new ArrayList<>();
-		productCategoryService.addCategoryForProduct(c_list, p_id);
+		c_list = categoryService.getCategoryList(null);
+	}
+	/**
+	 * 選擇分類
+	 * @return
+	 */
+	public String selectCategory() {
+//		c_list = categoryService.getCategoryList(null);
+		pc_list = productCategoryService.getListByProductId(p_id, null);
+		return "selectCategory";
 	}
 }

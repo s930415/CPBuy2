@@ -14,22 +14,23 @@ import jdbc.dao.impl.PagingDaoImpl;
 public class ProductCategoryDaoImpl extends PagingDaoImpl implements IProductCategoryDao {
 	/**
 	 * 依照產品取得分類列表
+	 * 
 	 * @param product_id
 	 * @param category_id
 	 * @return
 	 */
 	public List getListByProductId(Integer product_id, Integer category_id) {
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT C.* FROM PRODUCT_CATEGORY PC JOIN CATEGORY C ON PC.CATEGORY_ID = C.ID WHERE WHERE 1 = 1 ");
-		if (product_id != null) {
-			sql.append("AND PRODUCT_ID = ? ");
-		}
-		List<Category> list = jdbcTemplate.queryForList(sql.toString(), new Object[] { product_id }, com.cpbuy.model.Category.class);
+		sql.append(
+				"SELECT C.* , CASE WHEN PC.PRODUCT_ID IS NULL THEN 0 ELSE 1 END  FROM CATEGORY C LEFT JOIN PRODUCT_CATEGORY PC ON PC.CATEGORY_ID = C.ID AND PC.PRODUCT_ID = ? ");
+		List<Category> list = jdbcTemplate.queryForList(sql.toString(), new Object[] { product_id },
+				com.cpbuy.model.Category.class);
 		return list;
 	}
-	
+
 	/**
 	 * 增加分類
+	 * 
 	 * @param category_list
 	 * @param prodcut_id
 	 */
@@ -50,18 +51,20 @@ public class ProductCategoryDaoImpl extends PagingDaoImpl implements IProductCat
 			}
 		});
 	}
-	
+
 	/**
 	 * 清除分類
+	 * 
 	 * @param product_id
 	 */
 	public void clearCategoryByProdcutId(Integer product_id) {
 		String sql = "DELETE FROM PRODUCT_CATEGORY WHERE WHERE PRODUCT_ID = ? ";
 		jdbcTemplate.update(sql, new Object[] { product_id });
 	}
-	
+
 	/**
 	 * 刪除單項分類
+	 * 
 	 * @param product_id
 	 * @param category_id
 	 * @return
@@ -69,6 +72,23 @@ public class ProductCategoryDaoImpl extends PagingDaoImpl implements IProductCat
 	public void deleteCategoryIdForProductId(Integer product_id, Integer category_id) {
 		String sql = "DELETE FROM PRODUCT_CATEGORY WHERE WHERE PRODUCT_ID = ? AND CATEGORY_ID = ? ";
 		jdbcTemplate.update(sql, new Object[] { product_id, category_id });
+	}
+
+	/**
+	 * 取得產品分類
+	 * 
+	 * @param product_id
+	 * @return
+	 */
+	public List getProductCategory(Integer product_id) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT C.* FROM PRODUCT_CATEGORY PC JOIN CATEGORY C ON PC.CATEGORY_ID = C.ID  WHERE 1 = 1 ");
+		if (product_id != null) {
+			sql.append("AND PRODUCT_ID = ? ");
+		}
+		List<Category> list = jdbcTemplate.queryForList(sql.toString(), new Object[] { product_id },
+				com.cpbuy.model.Category.class);
+		return list;
 	}
 
 }

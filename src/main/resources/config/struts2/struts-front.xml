@@ -9,10 +9,15 @@
 		<global-exception-mappings>
 			<exception-mapping result="error" exception=""></exception-mapping>
 		</global-exception-mappings>
-		<action name="*" class="com.cpbuy.action.front.IndexAction"
+		<action name="*" class="indexAction"
 			method="{1}">
 			<result name="toIndex">/WEB-INF/front/index.jsp</result>
 			<result name="toLogin">/WEB-INF/front/login.jsp</result>
+		</action>
+		<action name="product" class="productAction"
+			method="{1}">
+			<result name="toList">/WEB-INF/front/product/toList.jsp</result>
+			<result name="toDetail">/WEB-INF/front/product/toDetail.jsp</result>
 		</action>
 	</package>
 </struts>
